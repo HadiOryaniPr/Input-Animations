@@ -1,0 +1,88 @@
+/*   color variables */
+$clr-primary: #18ffff;
+$clr-primary-light: #adffff;
+$clr-primary-dark: #091034;
+$clr-gray100: #f9fbff;
+$clr-gray150: #f4f6fb;
+$clr-gray200: #eef1f6;
+$clr-gray300: #e1e5ee;
+$clr-gray400: #767b91;
+$clr-gray500: #4f546c;
+$clr-gray600: #2a324b;
+$clr-gray700: #161d34;
+$clr-bg: #060b23;
+
+/*   border radius */
+$radius: 0.5rem;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background: $clr-bg;
+}
+
+// container
+
+.form {
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid $clr-gray300;
+        border-radius: $radius;
+        font-family: inherit;
+        font-size: inherit;
+        color: #fff;
+        outline: none;
+        padding: 1.30rem;
+        background: none;
+
+        // ---------------input hover------------------
+        &:hover {
+            border-color: $clr-primary-light;
+
+        }
+
+        // -------------------input focus-------------------------
+        &:focus {
+            border-color: $clr-primary;
+        }
+    }
+
+    // ----------------------label -------------------------------------
+    &__label {
+        position: absolute;
+        left: 0.7rem;
+        top: 0.6rem;
+        padding: 0 0.5rem;
+        color: #fff;
+        cursor: text;
+        transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+        background: $clr-bg;
+    }
+}
+
+// --------------------Input Animations ------------------------
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus)
+~.form__label {
+    top: -0.5rem;
+    font-size: 0.8rem;
+    left: 0.8rem;
+}
