@@ -9,7 +9,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
@@ -37,10 +37,10 @@ body {
   background: none;
 }
 .form__input:hover {
-  border-color: #adffff;
+  border-color: #b5179e;
 }
 .form__input:focus {
-  border-color: #18ffff;
+  border-color: #f72585;
 }
 .form__label {
   position: absolute;
